@@ -54,8 +54,10 @@ cat > /etc/xl2tpd/xl2tpd.conf <<EOF
 port = 1701
 
 [lns default]
-ip range = 192.168.42.10-192.168.42.250
-local ip = 192.168.42.1
+#ip range = 192.168.42.10-192.168.42.250
+#local ip = 192.168.42.1
+ip range = 172.31.42.10-172.31.42.250
+local ip = 172.31.42.1
 require chap = yes
 refuse pap = yes
 require authentication = yes
