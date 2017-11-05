@@ -54,10 +54,10 @@ cat > /etc/xl2tpd/xl2tpd.conf <<EOF
 port = 1701
 
 [lns default]
-#ip range = 192.168.42.10-192.168.42.250
-#local ip = 192.168.42.1
-ip range = 172.31.42.10-172.31.42.250
-local ip = 172.31.42.1
+ip range = 192.168.42.10-192.168.42.250
+local ip = 192.168.42.1
+#ip range = 172.31.42.10-172.31.42.250
+#local ip = 172.31.42.1
 require chap = yes
 refuse pap = yes
 require authentication = yes
@@ -85,8 +85,8 @@ lock
 connect-delay 5000
 EOF
  
-#iptables -t nat -A POSTROUTING -s 192.168.42.0/24 -o eth0 -j MASQUERADE
-iptables -t nat -A POSTROUTING -s 172.31.42.0/24 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 192.168.42.0/24 -o eth0 -j MASQUERADE
+#iptables -t nat -A POSTROUTING -s 172.31.42.0/24 -o eth0 -j MASQUERADE
 echo 1 > /proc/sys/net/ipv4/ip_forward
 iptables-save > /etc/iptables.rules
 
